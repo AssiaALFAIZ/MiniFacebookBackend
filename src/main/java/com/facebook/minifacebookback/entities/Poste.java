@@ -18,8 +18,9 @@ public class Poste {
     private Date date_poste;
     @Column
     private String text;
-    @Column
-    private String image;
+    @Lob
+    @Column(columnDefinition = "BYTEA")
+    private byte[] image;
     @Column
     private Long id_utilisateur;
 }
