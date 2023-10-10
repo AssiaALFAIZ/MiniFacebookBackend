@@ -5,8 +5,11 @@ spring:
   jpa:
     database: POSTGRESQL
     show-sql: true
+    properties:
+      hibernate:
+        format_sql:true
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
   datasource:
     platform: postgres
     url: jdbc:postgresql://localhost:5432/facebookdb
@@ -19,3 +22,8 @@ spring:
         jwt:
           issuer-uri: http://localhost:8080/realms/react-realm
           jwk-set-uri: http://localhost:8080/realms/react-realm/protocol/openid-connect/certs
+ #spring:
+  #  servlet:
+   #   multipart:
+   #     file-size-threshold:2
+    #    max-file-size:64000
